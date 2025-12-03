@@ -1,16 +1,67 @@
-# React + Vite
+# KONKARDER - Konya Karaman Dernekleri Federasyonu
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Modern, responsive web sitesi - React, Vite ve Tailwind CSS ile geliştirilmiştir.
 
-Currently, two official plugins are available:
+## Özellikler
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ⚡ Vite ile hızlı geliştirme ortamı
+- ⚛️ React 19 ile modern component yapısı
+- 🎨 Tailwind CSS ile responsive tasarım
+- 🧭 React Router ile çok sayfalı navigasyon
+- 📱 Mobil uyumlu tasarım
 
-## React Compiler
+## Sayfalar
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. **Ana Sayfa** - Hero section ve hoş geldiniz mesajı
+2. **Konya & Karaman Tanıtımı** - İllerin tarihi ve kültürel bilgileri
+3. **Mevlana Tanıtımı** - Mevlana'nın hayatı, felsefesi ve mirası
+4. **Şirketler** - Üye derneklerin temsil ettiği şirketler (grid layout)
+5. **Etkinlikler** - Yaklaşan kültürel ve sosyal etkinlikler (card layout)
+6. **Hakkımızda** - Federasyon hakkında bilgi ve yönetim kurulu üyeleri
 
-## Expanding the ESLint configuration
+## Kurulum
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+# Bağımlılıkları yükle
+npm install
+
+# Geliştirme sunucusunu başlat
+npm run dev
+
+# Production build
+npm run build
+
+# Build önizleme
+npm run preview
+```
+
+## Teknolojiler
+
+- React 19.2.0
+- Vite 7.2.4
+- React Router DOM 7.x
+- Tailwind CSS 3.x
+- ESLint
+
+## Geliştirme
+
+Proje `http://localhost:5173` adresinde çalışacaktır.
+
+## Proje Yapısı
+
+```
+src/
+├── components/
+│   ├── Layout.jsx      # Ana layout wrapper
+│   ├── Navbar.jsx      # Navigasyon menüsü
+│   └── Footer.jsx      # Footer bileşeni
+├── pages/
+│   ├── Home.jsx        # Ana sayfa
+│   ├── KonyaKaraman.jsx
+│   ├── Mevlana.jsx
+│   ├── Sirketler.jsx
+│   ├── Etkinlikler.jsx
+│   └── Hakkimizda.jsx
+├── App.jsx             # Router yapılandırması
+└── main.jsx            # Uygulama giriş noktası
+```
