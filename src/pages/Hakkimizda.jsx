@@ -66,9 +66,6 @@ export default function Hakkimizda() {
               Konya ve Karamanlı hemşehrilerimizi gurbette bir araya getirerek aramızdaki dostluk ve komşuluk bağlarını canlı tutmayı amaçlıyoruz.
             </p>
             <p className="text-gray-700 leading-relaxed mb-3">
-              İyi günde de kötü günde de birbirimize destek olup, ihtiyaç sahibi hemşehrilerimizin elinden tutmaya gayret ediyoruz.
-            </p>
-            <p className="text-gray-700 leading-relaxed mb-3">
               Kültürümüzü ve geleneklerimizi unutmadan yaşatmak, çocuklarımıza ve gençlerimize bu değerleri öğretmek için çalışıyoruz.
             </p>
             <p className="text-gray-700 leading-relaxed mb-3">
@@ -88,9 +85,7 @@ export default function Hakkimizda() {
             <p className="text-gray-700 leading-relaxed mb-3">
               Konya ve Karaman'ın hoşgörüsünü en güzel şekilde temsil eden, örnek bir topluluk olmayı hedefliyoruz.
             </p>
-            <p className="text-gray-700 leading-relaxed mb-3">
-              Yardımlaşmanın sözde kalmadığı, kimsenin kendini yalnız hissetmediği, birbirine kenetlenmiş bir yapı kurmayı amaçlıyoruz.
-            </p>
+            
             <p className="text-gray-700 leading-relaxed mb-3">
               Gelecek nesillerin de kültürüne sahip çıktığı, köklerinden kopmadan büyüdüğü bir dernek bırakmak en büyük hayalimizdir.
             </p>
