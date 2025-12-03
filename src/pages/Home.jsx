@@ -76,7 +76,7 @@ export default function Home() {
         
         {/* Content */}
         <div className="relative z-10 text-center text-white px-4">
-          <h1 className="text-5xl md:text-7xl font-serif font-bold mb-4 drop-shadow-lg">
+          <h1 className="text-5xl md:text-6xl font-serif font-bold mb-4 drop-shadow-lg">
             Ne Olursan Ol, Yine Gel
           </h1>
           <p className="text-xl md:text-2xl font-serif text-green-200 drop-shadow-lg">
