@@ -25,7 +25,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="border-t border-green-800 mt-6 pt-6 text-center text-green-300 text-sm">
-          © 2025 Virtus Arge Yazılım A.Ş. Tüm hakları saklıdır.
+           © {new Date().getFullYear()} Virtus Arge Yazılım A.Ş. Tüm hakları saklıdır.
         </div>
       </div>
     </footer>
