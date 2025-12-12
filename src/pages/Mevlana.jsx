@@ -1,10 +1,10 @@
-import mevlana from "../assets/mevlanamüzesi.jpg";
+import mevlana from "../assets/mevlanamuzesi.jpg";
 
 export default function Mevlana() {
   return (
-    <div className="relative min-h-screen">
+    <div className="relative min-h-screen bg-white">
       <div 
-        className="absolute inset-0 z-0"
+        className="absolute inset-0 z-0 hidden md:block"
         style={{ 
           backgroundImage: `url(${mevlana})`,
           backgroundSize: 'cover',
