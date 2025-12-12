@@ -5,9 +5,12 @@ import konya3 from '../assets/konya3.jpeg';
 import karaman1 from '../assets/karaman1.jpeg';
 import karaman2 from '../assets/karaman2.jpeg';
 import karaman3 from '../assets/karaman3.jpg';
+import image1 from '../assets/image1.jpeg';
+import image2 from '../assets/image2.jpeg';
+import image3 from '../assets/image3.jpeg';
 
 export default function Home() {
-  const images = [konya1, konya2, konya3, karaman1, karaman2, karaman3];
+  const images = [konya1,image1, konya2, konya3,image2, karaman1, karaman2,image3, karaman3];
   const [currentImage, setCurrentImage] = useState(0);
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
@@ -115,7 +118,7 @@ export default function Home() {
       <div className="bg-gradient-to-r from-green-700 to-green-600 py-12">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-8">
-            Mevlana'yı Anma Töreni'ne Kalan Süre
+            Şeb-i Arûs Programı'ne Kalan Süre
           </h2>
           <div className="flex justify-center gap-4 md:gap-8">
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 md:p-6 min-w-[80px] md:min-w-[100px]">

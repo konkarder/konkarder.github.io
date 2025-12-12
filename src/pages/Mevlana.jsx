@@ -1,13 +1,27 @@
+import mevlana from "../assets/mevlanamüzesi.jpg";
+
 export default function Mevlana() {
   return (
-    <div className="container mx-auto px-4 py-12">
-      <h1 className="text-4xl font-bold text-gray-800 mb-8 text-center">
+    <div className="relative min-h-screen">
+      <div 
+        className="absolute inset-0 z-0"
+        style={{ 
+          backgroundImage: `url(${mevlana})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed'
+        }}
+      >
+        <div className="absolute inset-0 bg-white/60"></div>
+      </div>
+      <div className="container mx-auto px-4 py-12 relative z-10">
+      <h1 className="text-4xl font-bold  text-gray-800 mb-8 text-center">
         Mevlana Celaleddin-i Rumi
       </h1>
 
       <div className="max-w-4xl mx-auto">
         {/* Biography Section */}
-        <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
+        <div className="bg-white/20 backdrop-blur-sm rounded-lg shadow-lg p-8 mb-8">
           <h2 className="text-3xl font-bold text-blue-900 mb-4">Hayatı</h2>
           <div className="text-gray-700 leading-relaxed space-y-4">
             <p>
@@ -29,7 +43,7 @@ export default function Mevlana() {
         </div>
 
         {/* Philosophy Section */}
-        <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
+        <div className="bg-white/20 backdrop-blur-sm rounded-lg shadow-lg p-8 mb-8">
           <h2 className="text-3xl font-bold text-blue-900 mb-4">Felsefesi ve Öğretisi</h2>
           <div className="text-gray-700 leading-relaxed space-y-4">
             <p>
@@ -50,7 +64,7 @@ export default function Mevlana() {
         </div>
 
         {/* Legacy Section */}
-        <div className="bg-white rounded-lg shadow-lg p-8">
+        <div className="bg-white/20 backdrop-blur-sm rounded-lg shadow-lg p-8">
           <h2 className="text-3xl font-bold text-blue-900 mb-4">Mirası</h2>
           <div className="text-gray-700 leading-relaxed space-y-4">
             <p>
@@ -66,6 +80,7 @@ export default function Mevlana() {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }

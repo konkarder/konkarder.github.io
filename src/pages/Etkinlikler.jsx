@@ -1,12 +1,27 @@
+import { useState } from "react";
+import sa1 from "../assets/2025sa1.jpeg"
+import sa from "../assets/2025sa.jpeg"
+import sa24 from "../assets/2024sa.jpeg"
+
 export default function Etkinlikler() {
+  const [selectedEvent, setSelectedEvent] = useState(null);
+
   const events = [
     {
       id: 1,
-      name: "Mevlana'yı Anma Töreni",
-      date: "2025-12-17",
-      location: "Konya Kongre Merkezi",
-      image: "🎭"
+      name: "Şeb-i Arûs Programı",
+      date: "2025-12-24",
+      location: "Gazi Mustafa Kemal Atatürk Kültür Merkezi",
+      image: sa1
     },
+      {
+      id: 2,
+      name: "Şeb-i Arûs Programı",
+      date: "2024-12-25",
+      location: "Gazi Mustafa Kemal Atatürk Kültür Merkezi",
+      image: sa24
+    }
+    /*
     {
       id: 2,
       name: "Geleneksel El Sanatları Sergisi",
@@ -41,7 +56,7 @@ export default function Etkinlikler() {
       date: "2026-10-12",
       location: "Mevlana Kültür Merkezi",
       image: "🎵"
-    }
+    }*/
   ];
 
   return (
@@ -57,10 +72,19 @@ export default function Etkinlikler() {
         {events.map((event) => (
           <div 
             key={event.id}
-            className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+            className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 cursor-pointer"
+            onClick={() => setSelectedEvent(event)}
           >
-            <div className="bg-gradient-to-br from-blue-500 to-blue-700 h-48 flex items-center justify-center text-8xl">
-              {event.image}
+            <div className="h-48 overflow-hidden bg-gray-100 flex items-center justify-center">
+              {event.image.length > 5 ? (
+                <img 
+                  src={event.image} 
+                  alt={event.name} 
+                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                />
+              ) : (
+                <span className="text-6xl">{event.image}</span>
+              )}
             </div>
             <div className="p-6">
               <h3 className="text-xl font-bold text-gray-800 mb-3">
@@ -84,6 +108,53 @@ export default function Etkinlikler() {
           </div>
         ))}
       </div>
+
+      {/* Event Modal Popup */}
+      {selectedEvent && (
+        <div className="fixed inset-0 bg-white bg-opacity-90 z-50 flex items-center justify-center p-4" onClick={() => setSelectedEvent(null)}>
+          <div className="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto relative shadow-2xl border border-gray-100" onClick={e => e.stopPropagation()}>
+            <button 
+              onClick={() => setSelectedEvent(null)}
+              className="absolute top-4 right-4 bg-white rounded-full p-2 text-gray-600 hover:text-gray-900 shadow-md z-10"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+            
+            <div className="h-64 md:h-96 bg-white flex items-center justify-center">
+              {selectedEvent.image.length > 5 ? (
+                <img 
+                  src={selectedEvent.image} 
+                  alt={selectedEvent.name} 
+                  className="w-full h-full object-contain"
+                />
+              ) : (
+                <span className="text-9xl">{selectedEvent.image}</span>
+              )}
+            </div>
+            
+            <div className="p-8">
+              <h2 className="text-3xl font-bold text-gray-800 mb-6">{selectedEvent.name}</h2>
+              <div className="space-y-4 text-lg text-gray-600">
+                <p className="flex items-center">
+                  <span className="font-bold mr-3 min-w-[80px]">📅 Tarih:</span>
+                  {new Date(selectedEvent.date).toLocaleDateString('tr-TR', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                    weekday: 'long'
+                  })}
+                </p>
+                <p className="flex items-center">
+                  <span className="font-bold mr-3 min-w-[80px]">📍 Yer:</span>
+                  {selectedEvent.location}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
