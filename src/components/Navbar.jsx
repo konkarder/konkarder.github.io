@@ -66,9 +66,21 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile Menu */}
-        <div className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
-          <div className="py-4 space-y-3">
+        {/* Mobile Menu (Overlay with scroll) */}
+        <div
+          className={`md:hidden fixed inset-0 z-40 transition-opacity duration-300 ${isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+          aria-hidden={!isOpen}
+        >
+          {/* Backdrop */}
+          <div
+            className={`absolute inset-0 bg-black/40 transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0'}`}
+            onClick={closeMenu}
+          />
+          {/* Sliding Panel under navbar */}
+          <div
+            className={`absolute top-20 left-0 right-0 mx-auto max-w-screen-sm bg-gradient-to-b from-green-950 to-green-900 text-white shadow-xl border-t border-green-800/50 transition-all duration-300 ${isOpen ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0'}`}
+          >
+            <div className="py-4 space-y-3 max-h-[70vh] overflow-y-auto">
             <Link to="/" onClick={closeMenu} className="block py-2 px-4 hover:bg-green-800/50 rounded transition font-medium">
               Anasayfa
             </Link>
@@ -95,6 +107,7 @@ export default function Navbar() {
             <Link to="/hakkimizda" onClick={closeMenu} className="block py-2 px-4 hover:bg-green-800/50 rounded transition font-medium">
               Hakkımızda
             </Link>
+            </div>
           </div>
         </div>
       </div>
